@@ -15,6 +15,7 @@ function show_help () {
   echo '-e, --edit FILE           edits FILE using $EDITOR'
   echo '-r, --rekey               re-encrypts all secrets with specified recipients'
   echo '-i, --identity            identity to use when decrypting'
+  echo '-v, --verbose             verbose output'
   echo ' '
   echo 'FILE an age-encrypted file'
   echo ' '
@@ -60,6 +61,10 @@ while test $# -gt 0; do
     -r|--rekey)
       shift
       REKEY=1
+      ;;
+    -v|--verbose)
+      shift
+      set -x
       ;;
     *)
       show_help
