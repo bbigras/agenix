@@ -105,7 +105,7 @@ $ nix-channel --update
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        agenix.nixosModules.age
+        agenix.nixosModules.age.x86_64-linux
       ];
     };
   };
